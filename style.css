@@ -7,13 +7,13 @@
 
 h1 {
   text-align: center;
+  padding-bottom: 25px;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 10%;
+  display: grid;
+  place-items: center;
+  padding-bottom: 25px;
 }
 
 li, a {
@@ -32,17 +32,43 @@ li, a {
   padding: 0px 20px;
 }
 
-.nav_links li a {
-  transition: all 0.3s ease 0s;
-}
-
-.nav_links li a hover {
+li, a:hover {
   color: black;
 }
+
 img {
     display: block;
     width: 750px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 8px;
 }
+
+footer {
+  display: grid;
+  place-items: center;
+  padding-top: 25px;
+}
+#aboutHeading {
+  color: white;
+  text-align: center;
+}
+
+#aboutParagraph {
+  color: #87A7D5;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#contactHeading {
+  color: white;
+  text-align: center;
+}
+
+#contactParagraph {
+  color: #87A7D5;
+  padding-top: 20px;
+  text-align: center;
+}
+
