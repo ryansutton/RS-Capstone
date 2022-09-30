@@ -39,11 +39,11 @@ router.hooks({
       case "Home":
         axios
           .get(
-            `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.CHARITY_NAVIGATOR_APP_ID}
-          &app_key=${process.env.CHARITY_NAVIGATOR_API_KEY}`
+            `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.CHARITY_NAVIGATOR_APP_ID}&app_key=${process.env.CHARITY_NAVIGATOR_API_KEY}`
           )
           .then(response => {
             console.log(response.data);
+            done();
           })
           .catch(err => {
             console.log(err);
