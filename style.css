@@ -81,6 +81,17 @@ footer {
   text-align: center;
 }
 
+#charityParagraph {
+  color: #87A7D5;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.smallHeadings {
+  color: white;
+  text-align: center;
+  padding-top: 25px;
+}
 @media (min-width: 550px) {
   nav > .fa-bars {
     display: none;
