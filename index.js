@@ -50,6 +50,22 @@ router.hooks({
             done();
           });
         break;
+      case "FindCharity":
+        axios
+          .get(
+            `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.CHARITY_NAVIGATOR_APP_ID}&app_key=${process.env.CHARITY_NAVIGATOR_API_KEY}&state=MO&city=St.%20Louis`
+          )
+          .then(response => {
+            console.log(response.data);
+            store.FindCharity.charity = {};
+            store.FindCharity.charity = response.data.charityName;
+            done();
+          })
+          .catch(err => {
+            console.log(err);
+            done();
+          });
+        break;
       default:
         done();
     }
