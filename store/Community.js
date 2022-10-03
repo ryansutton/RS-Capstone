@@ -1,4 +1,4 @@
 export default {
   header: "STL Charity Connect",
-  view: "About"
+  view: "Community"
 };
