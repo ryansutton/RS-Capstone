@@ -5,4 +5,9 @@ export default state => html`
   <p id="charityParagraph">
     A charity in St.Louis is ${state.charity}.
   </p>
+  <!-- <div id="searchContainer">
+    <form>
+      <input type="search" id="charitySearch" name="charitySearch" />
+    </form>
+  </div> -->
 `;
