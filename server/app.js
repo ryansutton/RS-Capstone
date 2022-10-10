@@ -16,12 +16,18 @@ app.use(express.json());
 app.use(logging);
 
 // Handle the request with HTTP GET method from http://localhost:4040/status
-app.get("/status", (request, response) => {
+app
+  .route("/status")
   // Create the headers for response by default 200
   // Create the response body
   // End and return the response
-  response.send(JSON.stringify({ message: "Service healthy" }));
-});
+  .get((request, response) => {
+    response.status(200).json({ message: "Service healthy" });
+  })
+  //Handle POST method
+  .post((request, response) => {
+    response.json({ requestBody: request.body });
+  });
 
 const PORT = process.env.PORT || 4040;
 // Tell the Express app to start listening
