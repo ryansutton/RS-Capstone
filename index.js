@@ -21,10 +21,25 @@ function render(state = store.Home) {
   router.updatePageLinks();
 }
 
+//setting event listeners for after the page is rendered to handle the hamburger bar in small view and the search bar on Find a Charity page
 function afterRender(state) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+  if (state.view === "Findcharity") {
+    document.querySelector(".icons").addEventListener("click", event => {
+      event.preventDefault();
+
+      const searchTerm = document.querySelector(".search").value;
+      console.log(searchTerm);
+    });
+    document.querySelector(".search").addEventListener("keypress", event => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.querySelector(".icons").click();
+      }
+    });
+  }
 }
 
 router.hooks({
