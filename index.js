@@ -64,7 +64,7 @@ router.hooks({
       case "Home":
         axios
           .get(
-            `https://newsapi.org/v2/everything?q=charities&domains=stltoday.com&apiKey=1afcda7ab6924754959e8a166f6bccb1`
+            `https://newsapi.org/v2/everything?q=charities&domains=stltoday.com&apiKey=${process.env.NEWS_API_KEY}`
           )
           .then(response => {
             console.log(response.data);
