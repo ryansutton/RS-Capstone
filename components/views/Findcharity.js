@@ -9,14 +9,17 @@ export default state => html`
     <table class="elementsContainer">
       <tr>
         <td>
-          <input type="text" placeholder="Search by category" class="search" />
+          <input type="text" placeholder="Search by topic" class="search" />
         </td>
         <td>
-          <a href="#" class="icons"
-            ><i class="fa-solid fa-magnifying-glass"></i
-          ></a>
+          <a href="#" class="icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
         </td>
       </tr>
     </table>
+  </div>
+  <div class="resultsContainer">
+
   </div>
 `;
