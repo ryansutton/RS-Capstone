@@ -38,11 +38,9 @@ function afterRender(state) {
         )
         .then(response => {
           console.log(response.data);
-          done();
         })
         .catch(err => {
           console.log(err);
-          done();
         });
     });
     document.querySelector(".search").addEventListener("keypress", event => {
@@ -66,7 +64,7 @@ router.hooks({
       case "Home":
         axios
           .get(
-            `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.CHARITY_NAVIGATOR_APP_ID}&app_key=${process.env.CHARITY_NAVIGATOR_API_KEY}`
+            `https://newsapi.org/v2/top-headlines?country=us?category=charities?q=stlouis&apiKey=1afcda7ab6924754959e8a166f6bccb1`
           )
           .then(response => {
             console.log(response.data);
