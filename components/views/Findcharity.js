@@ -20,6 +20,12 @@ export default state => html`
     </table>
   </div>
   <div class="resultsContainer">
-
+    <tr>
+      <td class="charityName"></td>
+      <td class="city"></td>
+    </tr>
+    <tr>
+      <td class="charityURL"></td>
+    </tr>
   </div>
 `;

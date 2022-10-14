@@ -38,6 +38,15 @@ function afterRender(state) {
         )
         .then(response => {
           console.log(response.data);
+          // const charity = document.querySelector(".charityName");
+          // const city = document.querySelector(".city");
+          // const email = document.querySelector(".charityURL");
+          // const results = [response.data];
+          // results.forEach(result => {
+          //   charity.append(result.charityName);
+          //   city.append(result.mailingAddress.city);
+          //   email.append(result.websiteURL);
+          // });
         })
         .catch(err => {
           console.log(err);

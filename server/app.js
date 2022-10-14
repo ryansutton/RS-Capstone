@@ -2,6 +2,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const community = require("./routers/community");
 
 dotenv.config();
 
@@ -51,11 +52,9 @@ app
   // End and return the response
   .get((request, response) => {
     response.status(200).json({ message: "Service healthy" });
-  })
-  //Handle POST method
-  .post((request, response) => {
-    response.json({ requestBody: request.body });
   });
+
+app.use("/community", community);
 
 const PORT = process.env.PORT || 4040;
 // Tell the Express app to start listening
