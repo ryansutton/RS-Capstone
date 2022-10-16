@@ -66,7 +66,7 @@ function afterRender(state) {
       console.log("request Body", requestData);
 
       axios
-        .post(`https://stlcharityconnect.herokuapp.com/community`, requestData)
+        .post(`${process.env.CHARITY_USER_API_URL}/community`, requestData)
         .then(response => {
           //push new user to display in list of community members
           store.Community.community.push(response.data);
@@ -99,6 +99,18 @@ router.hooks({
           })
           .catch(err => {
             console.log(err);
+            done();
+          });
+        break;
+      case "Community":
+        axios
+          .get(`${process.env.CHARITY_USER_API_URL}/community`)
+          .then(response => {
+            store.Community.userInfo = response.data;
+            done();
+          })
+          .catch(error => {
+            console.log("It puked", error);
             done();
           });
         break;
