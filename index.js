@@ -39,7 +39,6 @@ function afterRender(state) {
         .then(response => {
           console.log(response.data);
           const resultsContainer = document.querySelector(".resultsContainer");
-
         })
         .catch(err => {
           console.log(err);
@@ -67,7 +66,7 @@ function afterRender(state) {
       console.log("request Body", requestData);
 
       axios
-        .post(`http://localhost:4040`, requestData)
+        .post(`https://stlcharityconnect.herokuapp.com/community`, requestData)
         .then(response => {
           //push new user to display in list of community members
           store.Community.community.push(response.data);
