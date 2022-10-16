@@ -14,7 +14,7 @@ const communitySchema = new mongoose.Schema({
   email: {
     type: String,
     required: true
-    // validate: /^[A-Za-z@ ]*$/
+    // validate: /^[A-Za-z@. ]*$/
   }
 });
 
