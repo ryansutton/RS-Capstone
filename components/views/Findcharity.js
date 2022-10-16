@@ -23,8 +23,6 @@ export default state => html`
     <tr>
       <td class="charityName"></td>
       <td class="city"></td>
-    </tr>
-    <tr>
       <td class="charityURL"></td>
     </tr>
   </div>

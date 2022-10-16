@@ -18,3 +18,5 @@ router.get("/", (request, response) => {
     return response.json(record);
   });
 });
+
+module.exports = router;

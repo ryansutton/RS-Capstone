@@ -4,3 +4,4 @@ export { default as Contact } from "./Contact";
 export { default as Findcharity } from "./Findcharity";
 export { default as Community } from "./Community";
 export { default as Links } from "./Links";
+export { default as Join } from "./Join";

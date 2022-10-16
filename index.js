@@ -38,15 +38,8 @@ function afterRender(state) {
         )
         .then(response => {
           console.log(response.data);
-          // const charity = document.querySelector(".charityName");
-          // const city = document.querySelector(".city");
-          // const email = document.querySelector(".charityURL");
-          // const results = [response.data];
-          // results.forEach(result => {
-          //   charity.append(result.charityName);
-          //   city.append(result.mailingAddress.city);
-          //   email.append(result.websiteURL);
-          // });
+          const resultsContainer = document.querySelector(".resultsContainer");
+
         })
         .catch(err => {
           console.log(err);
@@ -57,6 +50,32 @@ function afterRender(state) {
         event.preventDefault();
         document.querySelector(".icons").click();
       }
+    });
+  }
+  if (state.view === "Join") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const requestData = {
+        name: inputList.name.value,
+        interests: inputList.interests.value,
+        email: inputList.email.value
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`http://localhost:4040`, requestData)
+        .then(response => {
+          //push new user to display in list of community members
+          store.Community.community.push(response.data);
+          router.navigate("/Community");
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
     });
   }
 }
