@@ -69,7 +69,7 @@ function afterRender(state) {
         .post(`${process.env.CHARITY_USER_API_URL}/community`, requestData)
         .then(response => {
           //push new user to display in list of community members
-          store.Community.community.push(response.data);
+          store.Community.userInfo.push(response.data);
           router.navigate("/Community");
         })
         .catch(error => {
