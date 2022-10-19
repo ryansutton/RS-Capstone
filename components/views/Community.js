@@ -3,7 +3,7 @@ import html from "html-literal";
 export default st => `
 <h3 class="smallHeadings">Community</h3>
 <table id="communityMembers">
-<tr><th>Name</th><th>Interests</th><th>Email</th></tr>
+<tr><th>Name</th><th>Charities of Interests</th><th>Email</th></tr>
 ${st.userInfo
   .map(
     user =>
