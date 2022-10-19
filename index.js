@@ -36,9 +36,35 @@ function afterRender(state) {
         .get(
           `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.CHARITY_NAVIGATOR_APP_ID}&app_key=${process.env.CHARITY_NAVIGATOR_API_KEY}&search=${searchTerm}&state=MO&city=St.%20Louis`
         )
+        // .then(response => {
+        //   if (response === 404) {
+        //     console.log("No search results found");
+        //   }
+        // })
         .then(response => {
           console.log(response.data);
+          let results = response.data;
           const resultsContainer = document.querySelector(".resultsContainer");
+          // const charityContainer = document.querySelector(".charityName");
+          // const cityContainer = document.querySelector(".city");
+          // const charityURLContainer = document.querySelector(".charityURL");
+          results.forEach(result => {
+            let charity = result.charityName;
+            let city = result.mailingAddress.city;
+            let website = result.websiteURL;
+            if (website === null) {
+              website = "Website Not Available";
+            }
+            // charityContainer.append(charity);
+            // cityContainer.append(city);
+            // charityURLContainer.append(website);
+            // resultsContainer.append(
+            //   charityContainer,
+            //   cityContainer,
+            //   charityURLContainer
+            // );
+            resultsContainer.append(charity, city, website);
+          });
         })
         .catch(err => {
           console.log(err);
@@ -88,20 +114,20 @@ router.hooks({
 
     // Handle multiple routes
     switch (view) {
-      case "Home":
-        axios
-          .get(
-            `https://newsapi.org/v2/everything?q=charities&domains=stltoday.com&apiKey=${process.env.NEWS_API_KEY}`
-          )
-          .then(response => {
-            console.log(response.data);
-            done();
-          })
-          .catch(err => {
-            console.log(err);
-            done();
-          });
-        break;
+      // case "Home":
+      //   axios
+      //     .get(
+      //       `https://newsapi.org/v2/everything?q=charities&domains=stltoday.com&apiKey=${process.env.NEWS_API_KEY}`
+      //     )
+      //     .then(response => {
+      //       console.log(response.data);
+      //       done();
+      //     })
+      //     .catch(err => {
+      //       console.log(err);
+      //       done();
+      //     });
+      //   break;
       case "Community":
         axios
           .get(`${process.env.CHARITY_USER_API_URL}/community`)
@@ -141,6 +167,7 @@ router
   .on({
     "/": () => render(),
     ":view": params => {
+      // debugger;
       let view = capitalize(params.data.view);
       render(store[view]);
     }
