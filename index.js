@@ -26,6 +26,8 @@ function afterRender(state) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+
+  //allow users to search for local charities by topic
   if (state.view === "Findcharity") {
     document.querySelector(".icons").addEventListener("click", event => {
       event.preventDefault();
@@ -77,6 +79,7 @@ function afterRender(state) {
       }
     });
   }
+  //allowing user to had new user information into user database
   if (state.view === "Join") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
@@ -128,6 +131,8 @@ router.hooks({
       //       done();
       //     });
       //   break;
+
+      //display table of users
       case "Community":
         axios
           .get(`${process.env.CHARITY_USER_API_URL}/community`)
