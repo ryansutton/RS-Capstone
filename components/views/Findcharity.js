@@ -2,9 +2,6 @@ import html from "html-literal";
 
 export default state => html`
   <h3 class="smallHeadings">Find a Charity</h3>
-  <!-- <p id="charityParagraph">
-    A charity in St.Louis is ${state.charity}.
-  </p> -->
   <div class="searchContainer">
     <table class="elementsContainer">
       <tr>
@@ -21,9 +18,14 @@ export default state => html`
   </div>
   <div class="resultsContainer">
     <tr>
-      <td class="charityName"></td>
-      <td class="city"></td>
-      <td class="charityURL"></td>
+      <th>Charity</th>
+      <th>City</th>
+      <th>Website</th>
     </tr>
+    ${state.charities
+      .map(charity => {
+        return `<tr><td class="charityName">${charities.charityName}</td><td class="city">${charities.mailingAddress.city}</td><td class="charityURL">${charities.websiteURL}</td></tr>`;
+      })
+      .join("")}
   </div>
 `;
