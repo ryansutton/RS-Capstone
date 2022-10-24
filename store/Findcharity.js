@@ -1,5 +1,6 @@
 export default {
   header: "STL Charity Connect",
   view: "Findcharity",
-  charities: []
+  charities: [],
+  hidden: true
 };

@@ -113,6 +113,10 @@ footer {
 ::placeholder {
   color: white;
 }
+
+.hiddenTable {
+  display: none;
+}
 .search {
   border: none;
   height: 100%;

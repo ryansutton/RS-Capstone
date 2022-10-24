@@ -16,16 +16,24 @@ export default state => html`
       </tr>
     </table>
   </div>
-  <div class="resultsContainer">
-    <tr>
-      <th>Charity</th>
-      <th>City</th>
-      <th>Website</th>
-    </tr>
-    ${state.charities
-      .map(charity => {
-        return `<tr><td class="charityName">${charities.charityName}</td><td class="city">${charities.mailingAddress.city}</td><td class="charityURL">${charities.websiteURL}</td></tr>`;
-      })
-      .join("")}
+  <div class="resultsContainer ${state.hidden ? "hiddenTable" : ""}">
+    <table>
+      <tr>
+        <th>Charity</th>
+        <th>City</th>
+        <th>Website</th>
+      </tr>
+      ${state.charities
+        .map(charity => {
+          return html`
+            <tr>
+              <td class="charityName">${charity.charityName}</td>
+              <td class="city">${charity.mailingAddress.city}</td>
+              <td class="charityURL">${charity.websiteURL}</td>
+            </tr>
+          `;
+        })
+        .join("")}
+    </table>
   </div>
 `;

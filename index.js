@@ -26,7 +26,6 @@ function afterRender(state) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
-
   //allow users to search for local charities by topic
   if (state.view === "Findcharity") {
     document.querySelector(".icons").addEventListener("click", event => {
@@ -44,9 +43,20 @@ function afterRender(state) {
         //   }
         // })
         .then(response => {
-          console.log(response.data);
-          let results = response.data;
-          store.Findcharity.charities.push(results);
+          // console.log(response.data);
+          const results = response.data.map(charity => {
+            if (charity.websiteURL === null) {
+              charity.websiteURL = "";
+            }
+            return charity;
+          });
+          store.Findcharity.charities = results;
+          if (results.length > 0) {
+            store.Findcharity.hidden = false;
+            //add second table to display message saying results not found if there are no results
+          }
+          console.log(store.Findcharity.charities);
+          // router.navigate("/Findcharity");
         })
         .catch(err => {
           console.log(err);
@@ -59,33 +69,33 @@ function afterRender(state) {
       }
     });
   }
-}
-//allowing user to had new user information into user database
-if (state.view === "Join") {
-  document.querySelector("form").addEventListener("submit", event => {
-    event.preventDefault();
+  //allowing user to had new user information into user database
+  if (state.view === "Join") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
 
-    const inputList = event.target.elements;
-    console.log("Input Element List", inputList);
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
 
-    const requestData = {
-      name: inputList.name.value,
-      interests: inputList.interests.value,
-      email: inputList.email.value
-    };
-    console.log("request Body", requestData);
+      const requestData = {
+        name: inputList.name.value,
+        interests: inputList.interests.value,
+        email: inputList.email.value
+      };
+      console.log("request Body", requestData);
 
-    axios
-      .post(`${process.env.CHARITY_USER_API_URL}/community`, requestData)
-      .then(response => {
-        //push new user to display in list of community members
-        store.Community.userInfo.push(response.data);
-        router.navigate("/Community");
-      })
-      .catch(error => {
-        console.log("It puked", error);
-      });
-  });
+      axios
+        .post(`${process.env.CHARITY_USER_API_URL}/community`, requestData)
+        .then(response => {
+          //push new user to display in list of community members
+          store.Community.userInfo.push(response.data);
+          router.navigate("/Community");
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    });
+  }
 }
 
 router.hooks({
