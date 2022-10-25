@@ -16,6 +16,7 @@ export default state => html`
       </tr>
     </table>
   </div>
+  <!-- <h3 class="noResults>No Results Found</h3> -->
   <div class="resultsContainer ${state.hidden ? "hiddenTable" : ""}">
     <table>
       <tr>

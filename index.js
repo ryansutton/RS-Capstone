@@ -44,7 +44,8 @@ function afterRender(state) {
         // })
         .then(response => {
           // console.log(response.data);
-          // const results = response.data;
+          // let results = response.data;
+          // store.Findcharity.charities = [];
           const results = response.data.map(charity => {
             if (charity.websiteURL === null) {
               charity.websiteURL = "";
