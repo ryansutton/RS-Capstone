@@ -3,4 +3,5 @@ export default {
   view: "Findcharity",
   charities: [],
   hidden: true
+  // error: false
 };

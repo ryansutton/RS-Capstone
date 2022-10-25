@@ -44,9 +44,16 @@ function afterRender(state) {
         // })
         .then(response => {
           // console.log(response.data);
+          // const results = response.data;
           const results = response.data.map(charity => {
             if (charity.websiteURL === null) {
               charity.websiteURL = "";
+            }
+            if (charity.mailingAddress.city === "ST LOUIS") {
+              charity.mailingAddress.city = "St. Louis";
+            }
+            if (charity.mailingAddress.city === "LAKE ST LOUIS") {
+              charity.mailingAddress.city = "Lake St. Louis";
             }
             return charity;
           });
@@ -56,7 +63,7 @@ function afterRender(state) {
             //add second table to display message saying results not found if there are no results
           }
           console.log(store.Findcharity.charities);
-          // router.navigate("/Findcharity");
+          router.navigate("/Findcharity");
         })
         .catch(err => {
           console.log(err);
