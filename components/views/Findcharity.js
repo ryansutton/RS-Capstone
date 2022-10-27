@@ -19,9 +19,8 @@ export default state => html`
           </tr>
         </table>
       </div>
-
       <div class="resultsContainer ${state.hidden ? "hiddenTable" : ""}">
-        <table class="charitiesTable">
+        <table id="charitiesTable">
           <thead>
             <tr class="headingsRow">
               <th>Charity</th>
@@ -37,7 +36,7 @@ export default state => html`
                 <td class="charityName">${charity.charityName}</td>
                 <td class="city">${charity.mailingAddress.city}</td>
                 <td class="charityURL">
-                  <a href=${charity.websiteURL} target="_blank"
+                  <a id=charityLink href=${charity.websiteURL} target="_blank"
                     >${charity.websiteURL}</a
                   >
                 </td>

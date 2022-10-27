@@ -6,13 +6,15 @@ import kidsmartPic from "../../assets/img/kidsmart.png";
 export default state => html`
   <div class="newsContainer">
     <div class="newsPicture" id="barclayPicture">
-      <a
-        id="barclayPicLink"
-        href="https://philanthropynewsdigest.org/news/other-sources/article/?id=11316275&title=Purina-and-St.-Louis-Blues-Unveil-%27Purina-Doghouse%27-Penalty-Box-For-2022-2023-Season"
-        target="_blank"
-      >
-        <img src=${bluesPicture} />
-      </a>
+      <div>
+        <a
+          id="barclayPicLink"
+          href="https://philanthropynewsdigest.org/news/other-sources/article/?id=11316275&title=Purina-and-St.-Louis-Blues-Unveil-%27Purina-Doghouse%27-Penalty-Box-For-2022-2023-Season"
+          target="_blank"
+        >
+          <img src=${bluesPicture} />
+        </a>
+      </div>
       <h2 id="barclayHeadline">
         <a
           href="https://philanthropynewsdigest.org/news/other-sources/article/?id=11316275&title=Purina-and-St.-Louis-Blues-Unveil-%27Purina-Doghouse%27-Penalty-Box-For-2022-2023-Season"

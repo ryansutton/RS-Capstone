@@ -2,11 +2,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #3A65A4;
 }
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #3A65A4;
 }
 
 h1 {
@@ -20,7 +20,39 @@ header {
   padding-bottom: 25px;
 }
 
-/* styling footer with api attribution */
+/* styling home page content  */
+.newsPicture {
+  position: relative;
+  padding-top: 50px;
+}
+
+#barclayHeadline {
+  padding-top: 10px;
+  bottom: 0px;
+  left: 250px;
+  text-align: center;
+  opacity: 100%;
+}
+
+#katiesHeadline {
+  padding-top: 10px;
+  bottom: 0px;
+  left: 250px;
+  text-align: center;
+  opacity: 100%;
+}
+
+/* styling home page images  */
+img {
+  display: block;
+  width: 600px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
+
+/* styling Findcharity page footer with api attribution */
 #apiAttribution {
   width: 150px;
   height: auto;
@@ -40,6 +72,7 @@ header {
   text-align: center;
   color: white;
 }
+
 #footer {
   position: absolute;
   bottom: 0;
@@ -71,16 +104,6 @@ li, a:hover {
   color: black;
 }
 
-/* styling home page images  */
-img {
-    display: block;
-    width: 600px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-}
-
 /* footer {
   display: grid;
   place-items: center;
@@ -88,7 +111,6 @@ img {
 } */
 
 /* styling project text contents */
-
 #aboutHeading {
   color: white;
   text-align: center;
@@ -130,7 +152,7 @@ img {
   margin: auto;
   margin-top: 2.5%;
   position: relative;
-  width: 300px;
+  width: 325px;
   height: 42px;
   border: 4px solid black;
   padding: 0px 10px;
@@ -147,145 +169,11 @@ img {
   color: white;
 }
 
-/* hiding search results until search is performed  */
-.hiddenTable {
-  display: none;
-  text-align: center;
-}
-
-/* styling community table  */
-#communityMembers {
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1em;
-  min-width: 400px;
-  border-radius: 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-#communityMembers thead tr {
-  background-color: black;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-}
-
-#communityMembers th,
-#communityMembers td {
-  padding: 12px 15px;
-}
-
-#communityMembers tbody tr {
-  border-bottom: 1px solid lightgray;
-  background-color: white;
-}
-
-#communityMembers tbody tr:nth-of-type(odd) {
-  background-color: black;
-}
-
-#communityMembers tbody tr:nth-of-type(even) {
-  background-color: gray;
-}
-
-#communityMembers tbody tr:last-of-type {
-  border-bottom: 2px solid #123b77;
-}
-
-/* styling Join new user form  */
-form > h2 {
-  text-align: center;
-}
-
-label {
-  display: block;
-}
-
-/* styling charity search results table  */
-.charitiesTable {
-  border-collapse: separate;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1em;
-  min-width: 400px;
-  border-radius: 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.charitiesTable thead tr {
-  background-color: white !important;
-  color: white;
-  text-align: left;
-  font-weight: bold;
-}
-
-.charitiesTable th,
-.charitiesTable td {
-  padding: 12px 15px;
-  text-align: center;
-}
-
-.charitiesTable tbody tr {
-  border-bottom: 1px solid lightgray;
-}
-
-.charitiesTable tbody tr:nth-of-type(odd) {
-  background-color: black;
-}
-
-.charitiesTable tbody tr:nth-of-type(even) {
-  background-color: gray !important;
-}
-
-.charitiesTable tbody tr:last-of-type {
-  border-bottom: 2px solid #123b77;
-}
-
-.resultsContainer {
-  padding-top: 25px;
-}
-
-#noResults {
-  text-align: center;
-  padding-top: 25px;
-}
-
-.noResults {
-  text-align: center;
-  display: none;
-}
-
-.newsPicture {
-  position: relative;
-  padding-top: 50px;
-}
-
-#barclayHeadline {
-  padding-top: 10px;
-  bottom: 0px;
-  left: 250px;
-  text-align: center;
-  opacity: 100%;
-}
-
-#katiesHeadline {
-  padding-top: 10px;
-  bottom: 0px;
-  left: 250px;
-  text-align: center;
-  opacity: 100%;
-}
-/* .resultsError {
-  display: none;
-} */
-
 .search {
   border: none;
   height: 100%;
   width: 100%;
+  background-color: #3A65A4;
   padding: 0px 5px;
   border-radius: 50px;
   font-size: 18px;
@@ -302,6 +190,181 @@ label {
   color: white;
 }
 
+/* styling charity search results table  */
+#charitiesTable {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1em;
+  min-width: 400px;
+  border-radius: 10px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#charitiesTable thead tr {
+  background-color: #03224F;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+#charityLink {
+  color: #3A65A4;
+}
+
+#charityLink:hover {
+  color: #03224F;
+}
+
+#charitiesTable th {
+  padding: 12px 15px;
+}
+
+#charitiesTable td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+#charitiesTable tbody tr {
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+#charitiesTable tbody tr:nth-of-type(odd) {
+  background-color: white;
+}
+
+#charitiesTable tbody tr:nth-of-type(even) {
+  background-color: lightgray !important;
+}
+
+#charitiesTable tbody tr:last-of-type {
+  border-bottom: 2px solid #03224F;
+}
+
+.resultsContainer {
+  padding-top: 25px;
+}
+
+#noResults {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.noResults {
+  text-align: center;
+  display: none;
+}
+
+/* hiding search results until search is performed  */
+.hiddenTable {
+  display: none;
+  text-align: center;
+}
+
+/* styling Join new user form  */
+fieldset {
+  margin: 2em 0;
+  padding: 1em 2em;
+  border: solid 1px darkgray;
+  border-radius: 6px;
+  min-width: 200px;
+}
+
+legend {
+  font-size: 1.25em;
+  padding: 0 0.25em;
+  color: white !important;
+}
+
+label {
+  display: block;
+  margin-top: 1em !important;
+  padding-top: 1em;
+  color: white;
+  font-size: 1.5em;
+}
+
+label:first-of-type {
+  margin-top: 0 !important;
+}
+
+input {
+  padding: .5em;
+  border: solid 1px black;
+  background-color: gray;
+}
+
+input[type="email"],
+input[type="text"] {
+  width: 15em;
+}
+
+input[type="submit"] {
+  padding: .5em 1em;
+  border-radius: 6px;
+  background-color: black;
+  color: white;
+  font-size: .8em;
+}
+
+.inputs::placeholder {
+  color: black;
+}
+
+/* styling Join page form for smaller screens  */
+@media screen and (min-width: 430px) {
+  legend {
+    font-size: 1.75em;
+  }
+
+  fieldset {
+    width: 40%;
+    min-width: 320px;
+    margin: auto;
+  }
+}
+
+/* styling community table  */
+#communityMembers {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1em;
+  min-width: 400px;
+  border-radius: 10px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#communityMembers thead tr {
+  background-color: #03224F;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+#communityMembers th,
+#communityMembers td {
+  padding: 12px 15px;
+}
+
+#communityMembers tbody tr {
+  border-bottom: 1px solid black;
+  background-color: white;
+  color: black;
+}
+
+#communityMembers tbody tr:nth-of-type(even) {
+  background-color: lightgray;
+}
+
+#communityMembers tbody tr:last-of-type {
+  border-bottom: 2px solid #123b77;
+}
+
+/* styling project to be mobile friendly  */
 @media (min-width: 600px) {
   nav > .fa-bars {
     display: none;
