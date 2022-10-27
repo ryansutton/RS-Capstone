@@ -2,19 +2,19 @@ import html from "html-literal";
 
 export default state => html`
   <section id="newUser">
-    <form id="newUser" method="POST" action="">
+    <form id="newUser" class="newUserForm" method="POST" action="">
       <h2>Join the Community</h2>
-      <div>
+      <div class="newUserForm">
         <label for="name">Name:</label>
         <input
           type="text"
           name="name"
           id="name"
-          placeholder="Enter Name"
+          placeholder="Full Name"
           required
         />
       </div>
-      <div>
+      <div class="newUserForm">
         <label for="interests">Interests:</label>
         <input
           type="text"
@@ -24,7 +24,7 @@ export default state => html`
           required
         />
       </div>
-      <div>
+      <div class="newUserForm">
         <label for="email">Email:</label>
         <input
           type="text"
@@ -34,7 +34,12 @@ export default state => html`
           required
         />
       </div>
-      <input type="submit" name="submit" value="Submit User" />
+      <input
+        class="newUserForm"
+        type="submit"
+        name="submit"
+        value="Submit User"
+      />
     </form>
   </section>
 `;

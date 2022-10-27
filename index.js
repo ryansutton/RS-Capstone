@@ -26,14 +26,16 @@ function afterRender(state) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
-  //allow users to search for local charities by topic
+  //allow users to search for local charities by topic when clicking search icon
   if (state.view === "Findcharity") {
-    document.querySelector(".icons").addEventListener("click", event => {
+    // store.Findcharity.footer = true;
+    document.querySelector(".icons").addEventListener("click", async event => {
       event.preventDefault();
-
+      //setting charities as an empty array to clear out previous search results if new search is performed
+      store.Findcharity.charities = [];
       const searchTerm = document.querySelector(".search").value;
       // console.log(searchTerm);
-      axios
+      await axios
         .get(
           `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.CHARITY_NAVIGATOR_APP_ID}&app_key=${process.env.CHARITY_NAVIGATOR_API_KEY}&search=${searchTerm}&state=MO&city=St.%20Louis`
         )
@@ -45,7 +47,8 @@ function afterRender(state) {
         .then(response => {
           // console.log(response.data);
           // let results = response.data;
-          // store.Findcharity.charities = [];
+
+          //formatting search results to look a little cleaner
           const results = response.data.map(charity => {
             if (charity.websiteURL === null) {
               charity.websiteURL = "";
@@ -58,18 +61,24 @@ function afterRender(state) {
             }
             return charity;
           });
+          //setting charities array to new array with formatted results and allowing table to be displayed
           store.Findcharity.charities = results;
           if (results.length > 0) {
             store.Findcharity.hidden = false;
+            store.Findcharity.error = false;
             //add second table to display message saying results not found if there are no results
           }
           console.log(store.Findcharity.charities);
           router.navigate("/Findcharity");
         })
         .catch(err => {
+          store.Findcharity.hidden = true;
+          store.Findcharity.error = true;
+          router.navigate("/Findcharity");
           console.log(err);
         });
     });
+    //adding second event listener for if user presses enter instead of clicking search icon to function in the same way
     document.querySelector(".search").addEventListener("keypress", event => {
       if (event.key === "Enter") {
         event.preventDefault();
@@ -91,7 +100,7 @@ function afterRender(state) {
         email: inputList.email.value
       };
       console.log("request Body", requestData);
-
+      //posting new info to database and the navigating to community page with updated user table
       axios
         .post(`${process.env.CHARITY_USER_API_URL}/community`, requestData)
         .then(response => {
@@ -163,6 +172,14 @@ router.hooks({
       default:
         done();
     }
+  },
+  already: params => {
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
+        : "Home";
+
+    render(store[view]);
   }
 });
 

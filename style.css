@@ -20,6 +20,34 @@ header {
   padding-bottom: 25px;
 }
 
+/* styling footer with api attribution */
+#apiAttribution {
+  width: 150px;
+  height: auto;
+}
+
+#pageContainer {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* setting footer height */
+#contentWrap {
+  padding-bottom: 2.5rem;
+}
+
+#attribution {
+  text-align: center;
+  color: white;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+/* styling nav bar */
 li, a {
   font-weight: 500;
   font-size: 16px;
@@ -43,20 +71,24 @@ li, a:hover {
   color: black;
 }
 
+/* styling home page images  */
 img {
     display: block;
-    width: 750px;
+    width: 600px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
     border-radius: 8px;
 }
 
-footer {
+/* footer {
   display: grid;
   place-items: center;
   padding-top: 25px;
-}
+} */
+
+/* styling project text contents */
+
 #aboutHeading {
   color: white;
   text-align: center;
@@ -93,6 +125,7 @@ footer {
   padding-top: 25px;
 }
 
+/* styling Findcharity view search bar  */
 .searchContainer {
   margin: auto;
   margin-top: 2.5%;
@@ -114,10 +147,137 @@ footer {
   color: white;
 }
 
+/* hiding search results until search is performed  */
 .hiddenTable {
+  display: none;
+  text-align: center;
+}
+
+/* styling community table  */
+#communityMembers {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1em;
+  min-width: 400px;
+  border-radius: 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#communityMembers thead tr {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+#communityMembers th,
+#communityMembers td {
+  padding: 12px 15px;
+}
+
+#communityMembers tbody tr {
+  border-bottom: 1px solid lightgray;
+  background-color: white;
+}
+
+#communityMembers tbody tr:nth-of-type(odd) {
+  background-color: black;
+}
+
+#communityMembers tbody tr:nth-of-type(even) {
+  background-color: gray;
+}
+
+#communityMembers tbody tr:last-of-type {
+  border-bottom: 2px solid #123b77;
+}
+
+/* styling Join new user form  */
+form > h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+}
+
+/* styling charity search results table  */
+.charitiesTable {
+  border-collapse: separate;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1em;
+  min-width: 400px;
+  border-radius: 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.charitiesTable thead tr {
+  background-color: white !important;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.charitiesTable th,
+.charitiesTable td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.charitiesTable tbody tr {
+  border-bottom: 1px solid lightgray;
+}
+
+.charitiesTable tbody tr:nth-of-type(odd) {
+  background-color: black;
+}
+
+.charitiesTable tbody tr:nth-of-type(even) {
+  background-color: gray !important;
+}
+
+.charitiesTable tbody tr:last-of-type {
+  border-bottom: 2px solid #123b77;
+}
+
+.resultsContainer {
+  padding-top: 25px;
+}
+
+#noResults {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.noResults {
+  text-align: center;
   display: none;
 }
 
+.newsPicture {
+  position: relative;
+  padding-top: 50px;
+}
+
+#barclayHeadline {
+  padding-top: 10px;
+  bottom: 0px;
+  left: 250px;
+  text-align: center;
+  opacity: 100%;
+}
+
+#katiesHeadline {
+  padding-top: 10px;
+  bottom: 0px;
+  left: 250px;
+  text-align: center;
+  opacity: 100%;
+}
 /* .resultsError {
   display: none;
 } */
