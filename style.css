@@ -1,12 +1,14 @@
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+} */
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #3A65A4;
+  background-color: #3A65A4;box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -24,6 +26,7 @@ header {
 .newsPicture {
   position: relative;
   padding-top: 50px;
+  box-sizing: content-box;
 }
 
 #barclayHeadline {

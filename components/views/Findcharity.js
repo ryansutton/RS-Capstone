@@ -28,7 +28,7 @@ export default state => html`
               <th>Website</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="charityTableBody">
             ${state.charities
               .map(charity => {
                 return html`

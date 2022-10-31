@@ -7,13 +7,15 @@ export default state => html`
   <div class="newsContainer">
     <div class="newsPicture" id="barclayPicture">
       <div>
-        <a
-          id="barclayPicLink"
-          href="https://philanthropynewsdigest.org/news/other-sources/article/?id=11316275&title=Purina-and-St.-Louis-Blues-Unveil-%27Purina-Doghouse%27-Penalty-Box-For-2022-2023-Season"
-          target="_blank"
-        >
-          <img src=${bluesPicture} />
-        </a>
+        <p>
+          <a
+            id="barclayPicLink"
+            href="https://philanthropynewsdigest.org/news/other-sources/article/?id=11316275&title=Purina-and-St.-Louis-Blues-Unveil-%27Purina-Doghouse%27-Penalty-Box-For-2022-2023-Season"
+            target="_blank"
+          >
+            <img src=${bluesPicture} />
+          </a>
+        </p>
       </div>
       <h2 id="barclayHeadline">
         <a
