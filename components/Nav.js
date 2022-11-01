@@ -7,7 +7,9 @@ import html from "html-literal";
 //  - data-navigo is a switch that allows Navigo to handle our page routing
 export default links => html`
   <nav>
-    <i class="fa-solid fa-bars"></i>
+    <div class="hamburger">
+      <i class="fa-solid fa-bars fa-2xl fa-align-center"></i>
+    </div>
     <ul class="hidden--mobile nav_links">
       ${links
         .map(
