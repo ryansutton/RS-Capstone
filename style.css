@@ -1,12 +1,6 @@
-/* * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-} */
-
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #3A65A4;box-sizing: border-box;
+  background-color: #3A65A4;
   margin: 0;
   padding: 0;
 }
@@ -24,9 +18,7 @@ header {
 
 /* styling home page content  */
 .newsPicture {
-  position: relative;
-  padding-top: 50px;
-  box-sizing: content-box;
+  text-align: center;
 }
 
 #barclayHeadline {
@@ -47,11 +39,10 @@ header {
 
 /* styling home page images  */
 img {
-  display: block;
+  display: inline;
   width: 600px;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
   border-radius: 8px;
 }
 
@@ -59,6 +50,10 @@ img {
 #apiAttribution {
   width: 150px;
   height: auto;
+}
+
+.charityNavigator {
+  text-align: center;
 }
 
 #pageContainer {
@@ -77,8 +72,9 @@ img {
 }
 
 #footer {
-  position: absolute;
-  bottom: 0;
+  padding-top: 5 px;
+  /* position: absolute;
+  bottom: 0; */
   width: 100%;
   height: 2.5rem;
 }
@@ -238,8 +234,8 @@ li, a:hover {
   background-color: white;
 }
 
-#charitiesTable tbody tr:nth-of-type(even) {
-  background-color: lightgray !important;
+#charitiesTable tbody tr:nth-child(even) {
+  background-color: lightgray;
 }
 
 #charitiesTable tbody tr:last-of-type {
