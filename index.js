@@ -61,6 +61,7 @@ function afterRender(state) {
             }
             return charity;
           });
+
           //setting charities array to new array with formatted results and allowing table to be displayed
           store.Findcharity.charities = results;
           if (results.length > 0) {
@@ -78,6 +79,7 @@ function afterRender(state) {
           console.log(err);
         });
     });
+
     //adding second event listener for if user presses enter instead of clicking search icon to function in the same way
     document.querySelector(".search").addEventListener("keypress", event => {
       if (event.key === "Enter") {
