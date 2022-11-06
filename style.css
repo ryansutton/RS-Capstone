@@ -219,20 +219,20 @@ li, a:hover {
   text-align: left;
 }
 
-#charitiesTable tbody tr {
+#charitiesTable tr {
   border-bottom: 1px solid black;
   color: black;
 }
 
-#charitiesTable tbody tr:nth-of-type(odd) {
+.resultsContainer tbody tr:nth-of-type(odd)  {
   background-color: white;
 }
 
-#charitiesTable tbody tr:nth-child(even) {
+.resultsContainer tbody tr:nth-of-type(even) {
   background-color: lightgray;
 }
 
-#charitiesTable tbody tr:last-of-type {
+#charitiesTable tr:last-of-type {
   border-bottom: 2px solid #03224F;
 }
 
@@ -305,6 +305,10 @@ input[type="submit"] {
 .inputs::placeholder {
   color: black;
 }
+
+/* .newUserForm:hover {
+  cursor: pointer;
+} */
 
 /* styling Join page form for smaller screens  */
 @media screen and (min-width: 430px) {
