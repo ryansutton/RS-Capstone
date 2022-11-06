@@ -28,21 +28,23 @@ export default state => html`
               <th>Website</th>
             </tr>
           </thead>
-          <tbody id="charityTableBody">
+          <tbody>
             ${state.charities
               .map(charity => {
                 return html`
-              <tr>
-                <td class="charityName">${charity.charityName}</td>
-                <td class="city">${charity.mailingAddress.city}</td>
-                <td class="charityURL">
-                  <a id=charityLink href=${charity.websiteURL} target="_blank"
-                    >${charity.websiteURL}</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          `;
+                  <tr>
+                    <td class="charityName">${charity.charityName}</td>
+                    <td class="city">${charity.mailingAddress.city}</td>
+                    <td class="charityURL">
+                      <a
+                        id="charityLink"
+                        href=${charity.websiteURL}
+                        target="_blank"
+                        >${charity.websiteURL}</a
+                      >
+                    </td>
+                  </tr>
+                `;
               })
               .join("")}
           </tbody>

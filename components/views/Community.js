@@ -13,6 +13,6 @@ export default st => `
         `<tr><td>${user.name}</td><td>${user.interests}</td><td>${user.email}</td></tr>`
     )
     .join()}
-  </body>
+  </tbody>
 </table>
 `;
